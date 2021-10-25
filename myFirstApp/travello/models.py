@@ -1,5 +1,5 @@
 from django.db import models
-
+import calendar
 # Create your models here.
 
 class Destination(models.Model) :
@@ -9,11 +9,11 @@ class Destination(models.Model) :
     price = models.IntegerField()
     offer = models.BooleanField(default = False)
         
-class News() :
-    id : int
-    img : str
-    date : int
-    month : str
-    headline : str
-    category : str
-    desc : str
+class News(models.Model) :
+    id : models.IntegerField()
+    img : models.ImageField(uploaded_to='pics')
+    date : models.DateField()
+    month : date.strftime("%B")               #or maybe we can write like: calendar.month_name[date.month] but not sure about this second approach .
+    headline : models.CharField(max_length = 200)
+    category : models.CharField(max_length = 200)
+    desc :  models.TextField()
