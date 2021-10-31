@@ -18,10 +18,10 @@ class News(models.Model) :
     NEWS_CHOICE=[   
     (SPORTS,'Sports'),(ENTERTAINMENT,'Entertaintment'),(MOVIES,'Movies'),
     ]
-    id = models.IntegerField(null=False)
+    id = models.IntegerField(null=False,blank=False)
     img = models.ImageField(uploaded_to='pics')
-    date = models.DateTimeField(null=False)
+    date = models.DateTimeField(null=False,blank=False)
    
-    headline = models.CharField(max_length = 200, null=False)
+    headline = models.CharField(max_length = 200, null=False,blank=False)
     category = models.CharField(max_length = 200,choices=NEWS_CHOICE,default=SPORTS)
     desc =  models.TextField()
