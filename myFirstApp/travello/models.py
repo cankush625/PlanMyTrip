@@ -12,7 +12,7 @@ class Destination(models.Model):
 
 
 class News(models.Model):
-    id = models.IntegerField(null=False, blank=False)
+    id = models.IntegerField(null=False, blank=False, primary_key=True)
     img = models.ImageField(upload_to="pics")
     date = models.DateTimeField(null=False, blank=False)
     headline = models.CharField(max_length=250)
