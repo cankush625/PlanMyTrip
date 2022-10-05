@@ -6,19 +6,19 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('travello', '0002_destination_price'),
+        ("travello", "0002_destination_price"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='News',
+            name="News",
             fields=[
-                ('id', models.IntegerField(primary_key=True, serialize=False)),
-                ('img', models.ImageField(upload_to='pics')),
-                ('date', models.DateTimeField()),
-                ('headline', models.CharField(max_length=250)),
-                ('category', models.CharField(max_length=50)),
-                ('desc', models.TextField()),
+                ("id", models.IntegerField(primary_key=True, serialize=False)),
+                ("img", models.ImageField(upload_to="pics")),
+                ("date", models.DateTimeField()),
+                ("headline", models.CharField(max_length=250)),
+                ("category", models.CharField(max_length=50)),
+                ("desc", models.TextField()),
             ],
         ),
     ]
