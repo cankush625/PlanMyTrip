@@ -1,6 +1,10 @@
+from datetime import datetime
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+
+# from myFirstApp.account.models import UserActivity
 
 
 def register(request):
@@ -50,6 +54,8 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
+            # Create user login record
+            # UserActivity.objects.create(user_id=user.id, last_login=datetime.now())
             return redirect("/")
         else:
             messages.info(request, "Invalid credentials!")
